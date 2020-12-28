@@ -31,8 +31,23 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.frameworks = 'UIKit'
-  # s.public_header_files = 'ZBJPoplar/Classes/**/*.h'
-  s.source_files = 'ZBJPoplar/Classes/**/*'
+#  s.public_header_files = 'ZBJPoplar/Classes/**/*.h'
+#  s.source_files = 'ZBJPoplar/Classes/**/*'
+  
+  s.subspec 'Category' do |sp|
+    sp.public_header_files = 'ZBJPoplar/Classes/Category/**/*.h'
+    sp.source_files = 'ZBJPoplar/Classes/Category/**/*'
+    
+    sp.subspec 'ZBJFoundation' do |sp|
+      sp.public_header_files = 'ZBJPoplar/Classes/Category/**/*.h'
+      sp.source_files = 'ZBJPoplar/Classes/Category/**/*'
+    end
+    
+    sp.subspec 'ZBJKit' do |sp|
+      sp.public_header_files = 'ZBJPoplar/Classes/Category/**/*.h'
+      sp.source_files = 'ZBJPoplar/Classes/Category/**/*'
+    end
+  end
   
   # s.resource_bundles = {
   #   'ZBJPoplar' => ['ZBJPoplar/Assets/*.png']
